@@ -31,7 +31,7 @@ layui.use(['form','layer','table','laytpl'],function(){
         cellMinWidth : 95,
         page : true,
         height : "full-125",
-        limits : [10,15,20,25],
+        limits : [5,10,15,20],
         limit : 5,
         id : "userListTable",
         cols : [[
@@ -97,11 +97,11 @@ layui.use(['form','layer','table','laytpl'],function(){
                     body.find(".userDesc").text(edit.userDesc);    //用户简介
                     form.render();
                 }
-                setTimeout(function(){
+               /* setTimeout(function(){
                     layui.layer.tips('点击此处返回班组列表', '.layui-layer-setwin .layui-layer-close', {
                         tips: 3
                     });
-                },500)
+                },500)*/
             }
         })
         //layui.layer.full(index);
@@ -164,11 +164,11 @@ layui.use(['form','layer','table','laytpl'],function(){
                     body.find(".orderId").val(data.orderId);
                     form.render();
                 }
-                setTimeout(function(){
+               /* setTimeout(function(){
                     layui.layer.tips('点击此处返回班组列表', '.layui-layer-setwin .layui-layer-close', {
                         tips: 3
                     });
-                },500)
+                },500)*/
             }
         })
         //layui.layer.full(index);

@@ -16,7 +16,7 @@ layui.use(['form','layer'],function(){
             //$('.userGrade').append("<option value="+">"+"请选择"+"</option>");
             $.each(data.data,function(index,item){
                 console.log(index+"----"+item);
-                $('.userGrade').append("<option value="+item.orderId+">"+item.orderName+"</option>");// 下拉菜单里添加元素
+                $('.userGrade').append("<option value="+item.orderId+">"+item.orderId+"</option>");// 下拉菜单里添加元素
             });
             $('.userGrade').find('option[value='+getQueryVariable("orderId")+']').attr('selected','selected');
             form.render();//下拉菜单渲染 把内容加载进去

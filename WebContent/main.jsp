@@ -11,8 +11,8 @@
             position: absolute;
             left:50%;
             top:50%;
-            margin-left:-261px;
-            margin-top:-66px;
+            margin-left:-304px;
+            margin-top:-55px;
         }
     </style>
 </head>

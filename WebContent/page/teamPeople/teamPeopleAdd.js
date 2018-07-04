@@ -5,7 +5,6 @@ layui.use(['form','layer'],function(){
 
 
     var orderIdList = [];
-    var flag;
     $.ajax({
         url:getRootPath()+'/order/findAll.action',
         dataType:'json',
@@ -25,16 +24,16 @@ layui.use(['form','layer'],function(){
     form.verify({
         orderName: function(value, item){ //value：表单的值、item：表单的DOM对象
             if(value == ""){
-                return '用户名不能为空！';
+                return '班组名称不能为空！';
             }
             if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)){
-                return '用户名不能有特殊字符';
+                return '班组名称不能有特殊字符';
             }
             if(/(^\_)|(\__)|(\_+$)/.test(value)){
-                return '用户名首尾不能出现下划线\'_\'';
+                return '班组名称首尾不能出现下划线\'_\'';
             }
-            if(/^\d+\d+\d$/.test(value)){
-                return '用户名不能全为数字';
+            if(/^\+?[1-9][0-9]*$/.test(value)){
+                return '班组名称不能全为数字';
             }
             if(!new RegExp("^[\u4e00-\u9fffa-zA-Z0-9]{1,12}$").test(value)){
                 return '长度不能超过12个字符';
@@ -47,8 +46,7 @@ layui.use(['form','layer'],function(){
             if(!new RegExp("^([0-9]([0-9]+)?|8)$").test(value)){
                 return '请填纯数字，且长度不超过8！';
             }
-            if(flag){
-                flag = false;
+            if(isInArray(orderIdList,value)){
                 return '该编号已经添加，请不要重复添加！';
             }
         }
@@ -63,11 +61,8 @@ layui.use(['form','layer'],function(){
 
     form.on("submit(addUser)",function(data){
         //弹出loading
-        var tmp = $(".orderId").val();
-        (isInArray(orderIdList,tmp));
-        if(isInArray(orderIdList,tmp)){
-            flag = true;
-        }else{
+
+
             console.log("$$$$$$$$$$"+$(".userGrade").attr("select","selected").val());
             var index = layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
             // 实际使用时的提交信息
@@ -85,7 +80,7 @@ layui.use(['form','layer'],function(){
                 parent.location.reload();
             },1000);
 
-        }
+
         return false;
     })
 

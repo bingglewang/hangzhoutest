@@ -21,18 +21,18 @@
 
     <div class="layui-side layui-bg-black" >
         <div class="layui-side-scroll">
-            <div title="菜单缩放" class="kit-side-fold" style="text-align: center;width: 200px;line-height: 36px;"> <i class="layui-icon layui-icon-home"  style="font-size: 30px;" aria-hidden="true"></i></div>
+            <div title="菜单缩放" class="kit-side-fold" style="text-align: center;width: 200px;line-height: 36px;"> <i class="layui-icon layui-icon-shrink-right"  style="font-size: 30px;" aria-hidden="true"></i></div>
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-                <li class="layui-nav-item layui-nav-itemed" >
+                <li class="layui-nav-item" >
                     <a class="" href="javascript:;" ><i class="layui-icon layui-icon-user" ></i> <span >用户信息管理</span></a>
-                    <dl class="layui-nav-child">
+                    <dl class="layui-nav-child" style="text-align: center">
                         <dd><a href="<%=request.getContextPath()%>/page/user/userList.html" target="testDemo"><i class="layui-icon layui-icon-user"></i> <span >用户列表</span></a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;"><i class="layui-icon layui-icon-user"></i> <span >班组人员管理</span></a>
-                    <dl class="layui-nav-child">
+                    <dl class="layui-nav-child" style="text-align: center">
                         <dd><a href="<%=request.getContextPath()%>/page/teamPeople/teamPeopleList.html" target="testDemo"><i class="layui-icon layui-icon-user"></i> <span >班组人员列表</span></a></dd>
                     </dl>
                 </li>

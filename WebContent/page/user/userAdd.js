@@ -16,7 +16,7 @@ layui.use(['form','layer'],function(){
             $.each(data.data,function(index,item){
                 orderNames.push(item.orderName);
                 console.log(index+"----"+item+"-----"+orderNames.length);
-                $('.userGrade').append("<option value="+item.orderId+">"+item.orderName+"</option>");// 下拉菜单里添加元素
+                $('.userGrade').append("<option value="+item.orderId+">"+item.orderId+"</option>");// 下拉菜单里添加元素
             });
             form.render();//下拉菜单渲染 把内容加载进去
         }
@@ -34,7 +34,7 @@ layui.use(['form','layer'],function(){
             if(/(^\_)|(\__)|(\_+$)/.test(value)){
                 return '用户名首尾不能出现下划线\'_\'';
             }
-            if(/^\d+\d+\d$/.test(value)){
+            if(/^\+?[1-9][0-9]*$/.test(value)){
                 return '用户名不能全为数字';
             }
             if(!new RegExp("^[\u4e00-\u9fffa-zA-Z0-9]{1,12}$").test(value)){
@@ -43,7 +43,7 @@ layui.use(['form','layer'],function(){
         },
         orderId:function (value,item) {
             if(orderNames.length == 0){
-                return '请选择所诉班组';
+                return '请选择所属班组';
             }
         }
     });

@@ -13,12 +13,12 @@ layui.use(['form','layer','table','laytpl'],function(){
         cellMinWidth: 95,
         page: true,
         height: "full-125",
-        limits: [10, 15, 20, 25],
+        limits: [5,10,15,20],
         limit: 5,
         id: "userListTable",
         cols: [[
             {type: "checkbox", fixed: "left", width: 50},
-            {field: 'userId', title: '用户Id', minWidth: 100, align: "center"},
+            {field: 'userId', title: '用户编号', minWidth: 100, align: "center"},
             {field: 'userName', title: '用户姓名', align: 'center'},
             {field: 'orderId', title: '班组编号', align: 'center', minWidth: 150},
             {title: '操作', minWidth: 175, templet: '#userListBar', fixed: "right", align: "center"}
@@ -106,11 +106,11 @@ layui.use(['form','layer','table','laytpl'],function(){
                         }
                     });
                 }
-                setTimeout(function(){
+               /* setTimeout(function(){
                     layui.layer.tips('点击此处返回用户列表', '.layui-layer-setwin .layui-layer-close', {
                         tips: 3
                     });
-                },500)
+                },500)*/
             }
         })
         //layui.layer.full(index);
@@ -141,11 +141,11 @@ layui.use(['form','layer','table','laytpl'],function(){
                     body.find(".userDesc").text(edit.userDesc);    //用户简介
                     form.render();
                 }
-                setTimeout(function(){
+               /* setTimeout(function(){
                     layui.layer.tips('点击此处返回用户列表', '.layui-layer-setwin .layui-layer-close', {
                         tips: 3
                     });
-                },500)
+                },500)*/
             }
         })
         //layui.layer.full(index);
@@ -198,11 +198,11 @@ layui.use(['form','layer','table','laytpl'],function(){
                     body.find("#userId").val(data.userId);
                     form.render();
                 }
-                setTimeout(function(){
+               /* setTimeout(function(){
                     layui.layer.tips('点击此处返回用户列表', '.layui-layer-setwin .layui-layer-close', {
                         tips: 3
                     });
-                },500)
+                },500)*/
             }
         })
         //layui.layer.full(index);

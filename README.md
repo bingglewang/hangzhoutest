@@ -14,4 +14,5 @@
       文件，将数据库用户名密码配置更改成自己本地的就ok
     3.点击idea里面的run按钮将项目运行起来，在浏览器里面输入[http://localhost:8080/test/index.jsp]()
 ##     4.运行效果
+在线观看效果：[http://59.110.138.128:8080/test/]()
 ![image](readme.png)

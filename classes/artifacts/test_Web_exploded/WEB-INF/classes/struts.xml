@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "struts-2.3.dtd">
+
+<struts>
+	 <!-- 设置webapp为开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 设置字符集 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 设置UI -->
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 配置上传文件的最大值 -->
+	<constant name="struts.multipart.maxSize" value="20701096" />
+	<!-- 整合Spring -->
+	<constant name="struts.objectFactory"   value="spring"></constant>
+	<!-- 标示对符合此正则表达式的URL,Struts不进行过滤 仅传递 -->
+	<constant name="struts.action.excludePattern" value="/ckfinder.*"/>
+	<!-- 设置临时文件上传路径 -->
+	<constant name="struts.multipart.saveDir" value="d:/temp" />
+	<!-- 添加一个常量设置 -->
+	<!-- <package name="front" namespace="" extends="struts-default">
+		
+   		<action name="getall" class="userAction" method="getAllUser">
+   			<result name="list">/list.jsp</result>
+   		</action>
+   		<action name="addUI" class="userAction" method="addUI">
+   			<result name="addUI" >/add.jsp</result>
+   		</action>
+   		<action name="add" class="userAction" method="add">
+   			<result name="add" type="redirect">getall.action</result>
+   		</action>
+   		<action name="del" class="userAction" method="del">
+   			<result name="del" type="redirect">getall.action</result>
+   		</action>
+   		<action name="updUI" class="userAction" method="updUI">
+   			<result name="updUI">/upd.jsp</result>
+   		</action>
+   		<action name="upd" class="userAction" method="upd">
+   			<result name="upd" type="redirect">getall.action</result>
+   		</action>
+   	</package> -->
+   	
+   	<package name="user" namespace="/user" extends="struts-default">
+		<action name="findAll" class="userAction" method="findAll">
+			<result name="success" type="json">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+   		<action name="getall" class="userAction" method="getAllUser">
+   			<result name="list">/list.jsp</result>
+   		</action>
+   		<action name="addUI" class="userAction" method="addUI">
+   			<result name="addUI" >/main.jsp</result>
+   		</action>
+   		<action name="add" class="userAction" method="add">
+   			<result name="add" type="redirect">getall.action</result>
+   		</action>
+   		<action name="del" class="userAction" method="del">
+   			<result name="del" type="redirect">getall.action</result>
+   		</action>
+   		<action name="updUI" class="userAction" method="updUI">
+   			<result name="updUI">/upd.jsp</result>
+   		</action>
+   		<action name="upd" class="userAction" method="upd">
+   			<result name="upd" type="redirect">getall.action</result>
+   		</action>
+   	</package>
+   	
+   	<package name="order" namespace="/order" extends="struts-default">		
+   		<action name="userorder" class="orderAction" method="getOrderById">
+   			 <result name="listOrder">/listOrder.jsp</result>
+   		</action>
+   	</package>
+   	
+   	<!-- 创建一个新的package,引入json-default -->
+<!-- 	<package name="ajax" namespace="/ajax" extends="json-default">	
+    	<action name="getLastSensor" class="ajaxAction" method="getLastSensor">
+    		<result type="json">
+    			<param name="root">result0</param>
+    		</result>
+    	</action>
+   	</package>
+   	 -->
+</struts>
